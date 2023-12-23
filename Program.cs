@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            var test = new Mod_5_2();
+            var test = new Mod_5_3();
             test.Test();
         }
     }
