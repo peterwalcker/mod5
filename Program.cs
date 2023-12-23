@@ -23,7 +23,8 @@ namespace mod5
             User.FavcolorsCount = CheckCorrectNumberInput("Enter the count of your favorite colors");
             User.Favcolors = GetArrayOfInputs(User.FavcolorsCount, "Enter your favorite color");
 
-            ShowUserInfo(User);     
+            ShowUserInfo(User);
+            Console.ReadKey();
         }
 
         static void ShowUserInfo((string FirstName, string LastName, int Age, bool HaveAPet, int PetCount, string[] PetNames, int FavcolorsCount, string[] Favcolors) user)
