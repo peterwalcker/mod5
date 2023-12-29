@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.Metrics;
 using System.Reflection.Metadata;
+using System.Text;
 
 namespace mod5
 {
@@ -48,19 +49,21 @@ namespace mod5
         }
         static string BuildCorrectString(bool condition, int count, string str)
         {
-            string correctStr = condition ? "have" : $"have no {str}s";
+            StringBuilder sb = new();
+            sb.Append(condition ? "have" : $"have no {str}s");
+
             if (condition)
             {
                 if (count == 1)
                 {
-                    correctStr += $" 1 {str}: ";
+                    sb.Append($" 1 {str}: ");
                 }
                 else
                 {
-                    correctStr += $" {count} {str}s: ";
+                    sb.Append($" {count} {str}s: ");
                 }
             }
-            return correctStr;
+            return sb.ToString();
         }
         static string[] GetArrayOfInputs(in int arrayCount, in string question)
         {
